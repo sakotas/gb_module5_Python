@@ -48,30 +48,47 @@
 Каждое число – среднесуточная температура в соответствующий день. 
 Температуры – целые числа и лежат в диапазоне от –50 до 50
 """
-
+#
 from random import randint
 
-days = int(input("Введите число кол-во дней: "))
+#
+# days = int(input("Введите число кол-во дней: "))
+#
+# current_day = randint(-3, 3)
+# warm_days = 0
+# count = 1
+#
+# while count <= days:
+#     print(f'Температура в день {count} = {current_day}')
+#     if current_day > 0:
+#         warm_days += 1
+#         count += 1
+#         next_day = current_day + randint(-3, 3)
+#         current_day = next_day
+#     else:
+#         count += 1
+#         next_day = current_day + randint(-3, 3)
+#         current_day = next_day
+#
+# print(f'Всего теплых дней в этот период: {warm_days}')
 
-current_day = randint(-3, 3)
-warm_days = 0
-count = 1
+"""
+Иван Васильевич пришел на рынок и решил купить два арбуза: один для себя, а другой для тещи. 
+Понятно, что для себя нужно выбрать арбуз потяжелей, а для тещи полегче. 
+Но вот незадача: арбузов слишком много и он не знает как же выбрать самый легкий и самый тяжелый арбуз? Помогите ему!
+Пользователь вводит одно число N – количество арбузов. Вторая строка содержит N чисел, записанных на новой строчке каждое. 
+Здесь каждое число – это масса соответствующего арбуза. Все числа натуральные и не превышают 30000.
+"""
 
-while count <= days:
-    print(f'Температура в день {count} = {current_day}')
-    if current_day > 0:
-        warm_days += 1
-        count += 1
-        next_day = current_day + randint(-3, 3)
-        current_day = next_day
-    else:
-        count += 1
-        next_day = current_day + randint(-3, 3)
-        current_day = next_day
+watermelon = int(input("Введите кол-во арбузов - "))
+max_weight, min_weight = 1, 30000
 
-print(f'Всего теплых дней в этот период: {warm_days}')
-
-
-
-
-
+for i in range(watermelon):
+    next_weight = randint(1, 30)
+    print(next_weight, end=" ")
+    if next_weight > max_weight:
+        max_weight = next_weight
+    if next_weight < min_weight:
+        min_weight = next_weight
+print()
+print(f'Максимальный вес {max_weight} Минимальный вес {min_weight}')
