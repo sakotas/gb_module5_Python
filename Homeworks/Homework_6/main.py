@@ -36,7 +36,7 @@ max_value = int(input('Введите max: '))
 index_list = list()
 
 for elem in range(len(new_list)):
-    if min_value < new_list[elem] < max_value:
+    if min_value <= new_list[elem] <= max_value:
         index_list.append(elem)
 
 print(index_list)
