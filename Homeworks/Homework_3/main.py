@@ -9,17 +9,17 @@
     3
     -> 1
 """
-n = int(input("Введите натуральное число N - кол-во элементов в массиве: "))
-task16_list = list(map(int, input("Введите числа в массиве через пробел: ").split()))
-x = int(input("Введите число Х, которое нужно найти: "))
-
-count = 0
-
-for i in range(n):
-    if task16_list[i] == x:
-        count += 1
-
-print(f"-> {count}")
+# n = int(input("Введите натуральное число N - кол-во элементов в массиве: "))
+# task16_list = list(map(int, input("Введите числа в массиве через пробел: ").split()))
+# x = int(input("Введите число Х, которое нужно найти: "))
+#
+# count = 0
+#
+# for i in range(n):
+#     if task16_list[i] == x:
+#         count += 1
+#
+# print(f"-> {count}")
 
 """
 Задача 18: Требуется найти в массиве A[1..N] самый близкий по величине элемент к заданному числу X. 
@@ -33,20 +33,20 @@ print(f"-> {count}")
     -> 5
 """
 
-n = int(input("Введите натуральное число N - кол-во элементов в массиве: "))
-task18_list = list(map(int, input("Введите числа в массиве через пробел: ").split()))
-x = int(input("Введите число Х, которое нужно найти: "))
-
-min_diff = float("inf")
-min_elem = None
-
-for _ in task18_list:
-    diff = abs(_ - x)
-    if diff < min_diff:
-        min_diff = diff
-        min_elem = _
-
-print(min_elem)
+# n = int(input("Введите натуральное число N - кол-во элементов в массиве: "))
+# task18_list = list(map(int, input("Введите числа в массиве через пробел: ").split()))
+# x = int(input("Введите число Х, которое нужно найти: "))
+#
+# min_diff = float("inf")
+# min_elem = None
+#
+# for _ in task18_list:
+#     diff = abs(_ - x)
+#     if diff < min_diff:
+#         min_diff = diff
+#         min_elem = _
+#
+# print(min_elem)
 
 """
 *Задача 20: * В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность. 
@@ -75,35 +75,54 @@ Q, Z – 10 очков.
     12
 """
 
-eng_values = {'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'S': 1, 'T': 1, 'R': 1,
-              'D': 2, 'G': 2,
-              'B': 3, 'C': 3, 'M': 3, 'P': 3,
-              'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4,
-              'K': 5,
-              'J': 8, 'X': 8,
-              'Q': 10, 'Z': 10}
+# eng_values = {'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'S': 1, 'T': 1, 'R': 1,
+#               'D': 2, 'G': 2,
+#               'B': 3, 'C': 3, 'M': 3, 'P': 3,
+#               'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4,
+#               'K': 5,
+#               'J': 8, 'X': 8,
+#               'Q': 10, 'Z': 10}
+#
+# rus_values = {'А': 1, 'В': 1, 'Е': 1, 'И': 1, 'Н': 1, 'О': 1, 'Р': 1, 'С': 1, 'Т': 1,
+#               'Д': 2, 'К': 2, 'Л': 2, 'М': 2, 'П': 2, 'У': 2,
+#               'Б': 3, 'Г': 3, 'Ё': 3, 'Ь': 3, 'Я': 3,
+#               'Й': 4, 'Ы': 4,
+#               'Ж': 5, 'З': 5, 'Х': 5, 'Ц': 5, 'Ч': 5,
+#               'Ш': 8, 'Э': 8, 'Ю': 8,
+#               'Ф': 10, 'Щ': 10, 'Ъ': 10}
+#
+#
+# word = input('Введите слово: ')
+#
+# if word[0].upper() in eng_values:
+#     values = eng_values
+# elif word[0].upper() in rus_values:
+#     values = rus_values
+# else:
+#     print('Не удалось определить алфавит')
+#     values = {}
+#
+# score = 0
+# for letter in word.upper():
+#     score += values.get(letter, 0)
+#
+# print('Стоимость слова', word, 'равна', score)
 
-rus_values = {'А': 1, 'В': 1, 'Е': 1, 'И': 1, 'Н': 1, 'О': 1, 'Р': 1, 'С': 1, 'Т': 1,
-              'Д': 2, 'К': 2, 'Л': 2, 'М': 2, 'П': 2, 'У': 2,
-              'Б': 3, 'Г': 3, 'Ё': 3, 'Ь': 3, 'Я': 3,
-              'Й': 4, 'Ы': 4,
-              'Ж': 5, 'З': 5, 'Х': 5, 'Ц': 5, 'Ч': 5,
-              'Ш': 8, 'Э': 8, 'Ю': 8,
-              'Ф': 10, 'Щ': 10, 'Ъ': 10}
 
+my_dict = {1: 'AEIOULNSTRАВЕИНОРСТ',
+           2: 'DGДКЛМПУ',
+           3: 'BCMPБГЁЬЯ',
+           4: 'FHVWYЙЫ',
+           5: 'KЖЗХЦЧ',
+           8: 'JXШЭЮ',
+           10: 'QZФЩЪ'}
 
+total = 0
 word = input('Введите слово: ')
 
-if word[0].upper() in eng_values:
-    values = eng_values
-elif word[0].upper() in rus_values:
-    values = rus_values
-else:
-    print('Не удалось определить алфавит')
-    values = {}
+for letter in word:
+    for key, value in my_dict.items():
+        if letter.upper() in value:
+            total += key
 
-score = 0
-for letter in word.upper():
-    score += values.get(letter, 0)
-
-print('Стоимость слова', word, 'равна', score)
+print(f'За слово "{word}" начисляют {total} баллов')

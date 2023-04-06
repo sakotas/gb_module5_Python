@@ -109,11 +109,9 @@ for i in range(len(str_list)):
         temp_list = str_list[i]
         result = 0
         for j in range(len(temp_list)):
-          result += int(temp_list[j])
-          str_list[i] = str(result)
+            result += int(temp_list[j])
+            str_list[i] = str(result)
 
 print(str_list)
 
 print(set(str_list))
-
-
